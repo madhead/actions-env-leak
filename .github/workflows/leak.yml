@@ -17,5 +17,5 @@ jobs:
           distribution: 'adopt'
           java-version: '11'
 
-      # Now the action fails
+      # Now JAVA_HOME points to the wrong location!
       - uses: madhead/actions-env-leak@main
