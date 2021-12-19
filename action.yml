@@ -1,0 +1,9 @@
+name: actions-env-leak
+author: madhead <siarhei.krukau@gmail.com>
+description: Do the environment variables really leak into Docker actions?
+runs:
+  using: docker
+  image: Dockerfile
+branding:
+  icon: alert-circle
+  color: red
