@@ -1,0 +1,21 @@
+name: Leak
+
+on:
+  - push
+
+jobs:
+  leak:
+    name: Leak
+    runs-on: ubuntu-latest
+    steps:
+      # Should have proper environment here
+      - uses: madhead/actions-env-leak@main
+
+      # JAVA_HOME leaks after this step
+      - uses: actions/setup-java@v2
+        with:
+          distribution: 'adopt'
+          java-version: '11'
+
+      # Now the action fails
+      - uses: madhead/actions-env-leak@main
